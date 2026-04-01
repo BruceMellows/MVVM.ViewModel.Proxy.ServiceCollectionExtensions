@@ -33,7 +33,7 @@ public static class AddViewModelProxySingletonExtension
 		where TInterface : class
 	{
 		serviceCollection.AddSingleton(sp => createProxy(sp));
-		serviceCollection.AddSingleton(sp => sp.GetRequiredService<IViewModelProxy<TInterface>>().ViewModel);
+		serviceCollection.AddSingleton(sp => sp.GetRequiredService<IViewModelProxy<TInterface>>().Proxied);
 		return serviceCollection;
 	}
 }
